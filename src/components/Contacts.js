@@ -1,0 +1,16 @@
+import React from 'react'
+import { useContacts } from '../contexts/ContactContext'
+import { ListGroup } from 'react-bootstrap'
+
+export default function Contacts() {
+    const { contacts } = useContacts()
+  return (
+      <ListGroup>
+          {contacts.map(contact => (
+              <ListGroup.Item key={contact.id}>
+                  {contact.name}
+             </ListGroup.Item> 
+          ))}
+      </ListGroup>
+  )
+}
